@@ -12,6 +12,7 @@ public class Ranta {
 		
 		System.out.println("Årsränta (i procent): ");
 		int interest = in.nextInt();
+		in.close();
 		
 		double interestRate = (interest / 100);
 		
