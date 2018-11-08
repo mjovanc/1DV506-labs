@@ -14,11 +14,10 @@ public class Ranta {
 		int interest = in.nextInt();
 		in.close();
 		
-		double interestRate = (interest / 100);
+		double sum = savings * Math.pow(1 + (double) interest / 100, 5);
+		int roundedSum = (int) Math.round(sum);
 		
-		double sum = savings * Math.pow(1 + interestRate, 5);
-		
-		System.out.printf("Värdet på besparingarna efter fem år är %f\n", sum);
+		System.out.printf("Värdet på besparingarna efter fem år är %d\n", roundedSum);
 
 	}
 
