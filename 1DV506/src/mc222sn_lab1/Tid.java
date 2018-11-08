@@ -8,10 +8,12 @@ public class Tid {
 		Scanner in = new Scanner(System.in);
 		
 		System.out.println("Ange antal sekunder: ");
-		int seconds = in.nextInt();
+		int secondsInput = in.nextInt();
 		
+		int hours = secondsInput / 3600;
+		int minutes = (secondsInput % 3600) / 60;
+		int seconds = secondsInput % 60;
 		
-		
-		System.out.println("Detta motsvarar: ");
+		System.out.printf("Detta motsvarar: %d timmar, %d minuter och %d sekunder.", hours, minutes, seconds);
 	}
 }
