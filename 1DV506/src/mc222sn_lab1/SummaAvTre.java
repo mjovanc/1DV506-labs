@@ -7,8 +7,9 @@ public class SummaAvTre {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
-		System.out.println("Ange ett tresiffrigt heltal: ");
+		System.out.print("Ange ett tresiffrigt heltal: ");
 		int number = in.nextInt();
+		in.close();
 		
 		int firstNumber = number / 100;
 		int secondNumber = (number / 10) % 10;

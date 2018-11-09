@@ -7,10 +7,10 @@ public class Ranta {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
-		System.out.println("Besparingar år noll: ");
+		System.out.print("Besparingar år noll: ");
 		int savings = in.nextInt();
 		
-		System.out.println("Årsränta (i procent): ");
+		System.out.print("Årsränta (i procent): ");
 		int interest = in.nextInt();
 		in.close();
 		
@@ -18,7 +18,6 @@ public class Ranta {
 		int roundedSum = (int) Math.round(sum);
 		
 		System.out.printf("Värdet på besparingarna efter fem år är %d\n", roundedSum);
-
 	}
 
 }

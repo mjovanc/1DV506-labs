@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Citat {
 	
 	public static void main(String[] args) {
-		System.out.println("Skriv in en rad text: ");
+		System.out.print("Skriv in en rad text: ");
 		
 		Scanner in = new Scanner(System.in);
 		String quote = in.nextLine();

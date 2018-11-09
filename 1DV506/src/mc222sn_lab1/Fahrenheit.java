@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Fahrenheit {
 	
 	public static void main(String[] args) {
-		System.out.println("Ange en temperatur i Fahrenheit: ");
+		System.out.print("Ange en temperatur i Fahrenheit: ");
 		
 		Scanner in = new Scanner(System.in);
 		double temp = in.nextDouble();

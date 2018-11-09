@@ -7,8 +7,9 @@ public class Tid {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		
-		System.out.println("Ange antal sekunder: ");
+		System.out.print("Ange antal sekunder: ");
 		int secondsInput = in.nextInt();
+		in.close();
 		
 		int hours = secondsInput / 3600;
 		int minutes = (secondsInput % 3600) / 60;
