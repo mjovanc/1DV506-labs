@@ -10,9 +10,13 @@ public class SummaAvTre {
 		System.out.println("Ange ett tresiffrigt heltal: ");
 		int number = in.nextInt();
 		
+		int firstNumber = number / 100;
+		int secondNumber = (number / 10) % 10;
+		int thirdNumber = number % 10;
 		
+		int sum = firstNumber + secondNumber + thirdNumber;
 		
-		System.out.println("Summan av siffrorna i heltalet är: ");
+		System.out.printf("Summan av siffrorna i heltalet är: %d", sum);
 	}
 
 }
