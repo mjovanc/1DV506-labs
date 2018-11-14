@@ -13,6 +13,8 @@ public class KortNamn {
 		System.out.print("Efternamn: ");
 		String lastName = in.nextLine();
 		
+		in.close();
+		
 		char firstLetter = firstName.charAt(0);
 		String shortLastName = lastName.substring(0, Math.min(4, lastName.length()));
 		

@@ -9,8 +9,10 @@ public class Area {
 		
 		System.out.print("Ange en cirkelradie: ");
 		double radius = in.nextDouble();
-		double PI = Math.PI;
 		
+		in.close();
+		
+		double PI = Math.PI;
 		double area = PI * Math.pow(radius, 2);
 		
 		System.out.printf("\nCirkelns area är: %.1f", area);

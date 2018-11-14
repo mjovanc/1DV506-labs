@@ -9,6 +9,7 @@ public class Citat {
 		
 		Scanner in = new Scanner(System.in);
 		String quote = in.nextLine();
+		
 		in.close();
 		
 		System.out.printf("Citat: \"%s\"\n", quote);
