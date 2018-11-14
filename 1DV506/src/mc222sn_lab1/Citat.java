@@ -13,4 +13,5 @@ public class Citat {
 		
 		System.out.printf("Citat: \"%s\"\n", quote);
 	}
+	
 }
