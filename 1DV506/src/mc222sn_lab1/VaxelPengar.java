@@ -12,12 +12,12 @@ public class VaxelPengar {
 		
 		System.out.print("Ange erhållet belopp: ");
 		double amount = in.nextDouble();
+		
 		in.close();
 		
 		int amountBack = (int) Math.round(amount - cost);
 		
 		System.out.printf("Tillbaka: %d kronor\n", amountBack);
-		
 		
 		System.out.printf("1000-lappar: %d\n", amountBack / 1000);
 		System.out.printf(" 500-lappar: %d\n", amountBack % 1000 / 500);

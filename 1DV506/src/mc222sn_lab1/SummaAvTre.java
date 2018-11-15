@@ -9,6 +9,7 @@ public class SummaAvTre {
 		
 		System.out.print("Ange ett tresiffrigt heltal: ");
 		int number = in.nextInt();
+		
 		in.close();
 		
 		int firstNumber = number / 100;
