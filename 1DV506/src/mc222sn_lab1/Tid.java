@@ -9,6 +9,7 @@ public class Tid {
 		
 		System.out.print("Ange antal sekunder: ");
 		int secondsInput = in.nextInt();
+		
 		in.close();
 		
 		int hours = secondsInput / 3600;
