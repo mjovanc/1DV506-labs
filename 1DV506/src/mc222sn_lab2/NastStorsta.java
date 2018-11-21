@@ -9,24 +9,39 @@ public class NastStorsta {
 		
 		System.out.print("Mata in 10 heltal: ");
 		
-		int count = 0;
 		int largest = 0;
+		int secondLargest = 0;
+		int number;
+		int totalNumberOfInputs = 10;
 		
 		while (in.hasNextInt())
 		{
-			int input = in.nextInt();
-			
-			if (input > largest)
+			for (int i = 0; i < totalNumberOfInputs; i++)
 			{
-				largest = input;
+				if (i == 0)
+				{
+					largest = in.nextInt();
+				}
+				else
+				{
+					number = in.nextInt();
+					if (number > largest)
+					{
+						secondLargest = largest;
+						largest = number;
+					}
+					else if (number > secondLargest)
+					{
+						secondLargest = number;
+					}
+				}
+				
 			}
 			
-			count++;
+			in.close();
 			
-			if (count == 3)
-			{
-				System.out.printf("Largest: %d", largest);
-			}
+			System.out.printf("Second max number is: %d", secondLargest);
+			break;
 		}
 		
 
