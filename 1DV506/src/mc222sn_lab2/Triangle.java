@@ -46,8 +46,6 @@ public class Triangle {
 			System.out.println("You didn't enter a positive integer!");
 		}
 		
-		
-		
 	}
 
 }
