@@ -14,7 +14,8 @@ public class Baklanges {
 		
 		String textReversed = "";
 		
-		for (int a = text.length(); a > 0; a--) {
+		for (int a = text.length(); a > 0; a--)
+		{
 			textReversed += text.substring(a - 1, a);
 		}
 		

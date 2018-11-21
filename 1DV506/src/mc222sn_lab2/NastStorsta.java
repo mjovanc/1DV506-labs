@@ -11,7 +11,7 @@ public class NastStorsta {
 		
 		int largest = 0;
 		int secondLargest = 0;
-		int number;
+		int number = 0;
 		int totalNumberOfInputs = 10;
 		
 		while (in.hasNextInt())
@@ -40,7 +40,7 @@ public class NastStorsta {
 			
 			in.close();
 			
-			System.out.printf("Second max number is: %d", secondLargest);
+			System.out.printf("Det näst största talet är: %d", secondLargest);
 			break;
 		}
 		

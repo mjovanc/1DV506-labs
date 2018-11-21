@@ -12,21 +12,29 @@ public class HighLow {
 		int rNumber = r.nextInt(100) + 1;
 		int guesses = 0;
 		
-		while (true) {
+		while (true)
+		{
 			guesses += 1;
 			System.out.printf("Gissning %d: ", guesses);
 			int guess = in.nextInt();
 			
-			if (guess == rNumber) {
+			if (guess == rNumber)
+			{
 				System.out.printf("\tRätt svar efter bara %d gissningar - Strålande!", guesses);
 				break;
-			} else if (guesses == 10) {
+			}
+			else if (guesses == 10)
+			{
 				System.out.println("\tDu har uppnått maximalt antal gissningar. Spelet avslutas.");
 				break;
-			} else {
-				if (guess < rNumber) {
+			}
+			else
+			{
+				if (guess < rNumber)
+				{
 					System.out.println("\tLedtråd: högre");
-				} else if (guess > rNumber) {
+				} else if (guess > rNumber)
+				{
 					System.out.println("\tLedtråd: lägre");
 				}
 			}

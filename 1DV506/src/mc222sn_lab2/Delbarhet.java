@@ -11,7 +11,8 @@ public class Delbarhet {
 			boolean divisibleByFive = a % 5 == 0;
 			boolean bothFourAndFive = a % 4 == 0 && a % 5 == 0;
 
-			if (divisibleByFour || divisibleByFive && !bothFourAndFive) {
+			if (divisibleByFour || divisibleByFive && !bothFourAndFive)
+			{
 				System.out.printf("%d ", a);
 			}
 				
