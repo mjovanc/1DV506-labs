@@ -12,9 +12,9 @@ public class TvaTarningar {
 		int[] diceRolls = new int[10000];
 		int[][] frequencyList = new int[2][11];
 		
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < frequencyList.length; i++)
 		{
-			for (int j = 2; j < 12; j++)
+			for (int j = 2; j < frequencyList[i].length + 2; j++)
 			{
 				frequencyList[0][j-2] = j;
 				frequencyList[1][j-2] = 0;
@@ -46,13 +46,12 @@ public class TvaTarningar {
 			}
 		}
 		
+		System.out.println("Frequency table (sum, count) for rolling two dices 10000 times");
 		
-		
-		System.out.println(frequencyList[1][0]);
-		System.out.println(frequencyList[1][1]);
-		System.out.println(frequencyList[1][2]);
-		System.out.println(frequencyList[1][3]);
-		System.out.println(frequencyList[1][4]);
+		for (int i = 0; i < 11; i++)
+		{
+			System.out.printf("%-10s %d\n", frequencyList[0][i], frequencyList[1][i]);
+		}
 		
 	}
 
