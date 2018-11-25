@@ -12,19 +12,15 @@ public class BytaPlats {
 	      
 	      System.out.println();
 	      
-	      if (text.length % 2 == 0)
+	      for (int i = 0; i < text.length; i++)
 	      {
-	    	  for (int i = 0; i < text.length; i++)
+	    	  if (i < text.length / 2)
 	    	  {
-	    		  if (i < text.length / 2)
-	    		  {
-	    			  char first = text[i];
-		    		  char second = text[text.length - (i + 1)];
+	    		  char first = text[i];
+	    		  char second = text[text.length - (i + 1)];
 		    		  
-		    		  text[i] = second;
-		    		  text[text.length - (i + 1)] = first;
-		    		  
-	    		  }
+	    		  text[i] = second;
+	    		  text[text.length - (i + 1)] = first;		  
 	    	  }
 	      }
 	      
