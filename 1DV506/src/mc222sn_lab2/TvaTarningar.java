@@ -2,8 +2,14 @@ package mc222sn_lab2;
 
 import java.util.Random;
 
-public class TvaTarningar {
-
+/**
+ * Simulating two rolling dices. Displaying a frequency table of
+ * sum and count for the rolling dices.
+ * 
+ * @author Marcus Cvjeticanin
+ */
+public class TvaTarningar
+{
 	public static void main(String[] args) {
 		Random r = new Random();
 		
@@ -52,7 +58,5 @@ public class TvaTarningar {
 		{
 			System.out.printf("%-10s %d\n", frequencyList[0][i], frequencyList[1][i]);
 		}
-		
 	}
-
 }

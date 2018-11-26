@@ -2,9 +2,16 @@ package mc222sn_lab2;
 
 import java.util.Scanner;
 
-public class Baklanges {
-
-	public static void main(String[] args) {
+/**
+ * Reads a line of text from the keyboard
+ * and then printing it out backwards.
+ * 
+ * @author Marcus Cvjeticanin
+ */
+public class Baklanges
+{
+	public static void main(String[] args)
+	{
 		Scanner in = new Scanner(System.in);
 		
 		System.out.print("Mata in en textrad: ");
@@ -20,7 +27,5 @@ public class Baklanges {
 		}
 		
 		System.out.printf("Baklänges: %s", textReversed);
-
 	}
-
 }

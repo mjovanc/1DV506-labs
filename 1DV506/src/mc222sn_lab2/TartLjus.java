@@ -1,25 +1,44 @@
 package mc222sn_lab2;
 
-// INTE KLAR!
-
-public class TartLjus {
-
-	public static void main(String[] args) {
-		int boxesOfCandles = 1;
-		int candlesInBox = 24;
-		int remainingCandles = 0;
-		int age = 1;
+/**
+ * Calculates how many boxes of candles one person needs to
+ * buy every year until the hundredth anniversary.
+ * 
+ * @author Marcus Cvjeticanin
+ */
+public class TartLjus
+{
+	public static void main(String[] args)
+	{
+		final int MAXAGE = 100;
+		final int CANDLES_IN_BOX = 24;
+		int candleBoxes = 0;
+		int candlesRemaining = 0;
+		int candleBoxesTotal = 0;
 		
-		for (int i = 0; i < 100; i++)
+		for (int age = 1; age <= MAXAGE; age++)
 		{
-			if (age > candlesInBox)
+			boolean enoughCandles = candlesRemaining / age >= 1;
+			
+			if (enoughCandles)
 			{
-				boxesOfCandles += 1;
-				remainingCandles = candlesInBox * boxesOfCandles - age;
+				candlesRemaining -= age;
+				// System.out.printf("Before birthday %d, buy %d box(es) (Candles left: %d)\n", age, candleBoxes, candlesRemaining);
 			}
-			age++;
+			else
+			{
+				double amountOfBoxes = Math.ceil( ((double) age - candlesRemaining) / CANDLES_IN_BOX); // Beräknar hur många boxar ålder / 24 och avrundar upp
+				candleBoxes += (int) amountOfBoxes;
+				
+				candlesRemaining += (candleBoxes * CANDLES_IN_BOX - age);
+				
+				System.out.printf("Before birthday %d, buy %d box(es) (Candles left: %d)\n", age, candleBoxes, candlesRemaining);
+				
+				candleBoxes -= amountOfBoxes;
+				candleBoxesTotal += amountOfBoxes;
+			}
 		}
-
+		System.out.printf("\nTotal number of boxes: %d, Remaining candels: %d\n", candleBoxesTotal, candlesRemaining);
 	}
 
 }

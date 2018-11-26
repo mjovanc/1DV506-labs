@@ -2,9 +2,14 @@ package mc222sn_lab2;
 
 import java.util.Scanner;
 
+/**
+ * Reads any positive integer from the keyboard and 
+ * prints out the amount of zeros, odd numbers and even numbers.
+ * 
+ * @author Marcus Cvjeticanin
+ */
 public class RaknaSiffror
 {
-
 	public static void main(String[] args)
 	{
 		Scanner in = new Scanner(System.in);
@@ -40,6 +45,7 @@ public class RaknaSiffror
 				odd += 1;
 			}
 		}
+		
 		System.out.printf("Nollor: %d\nUdda: %d\nJämna: %d", zeros, odd, even);	
 	}
 

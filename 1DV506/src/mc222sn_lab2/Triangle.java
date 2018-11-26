@@ -2,9 +2,16 @@ package mc222sn_lab2;
 
 import java.util.Scanner;
 
-public class Triangle {
-
-	public static void main(String[] args) {
+/**
+ * Reads any positive integer and prints out two
+ * triangles.
+ * 
+ * @author Marcus Cvjeticanin
+ */
+public class Triangle
+{
+	public static void main(String[] args)
+	{
 		Scanner in = new Scanner(System.in);
 		
 		System.out.print("Mata in ett udda heltal: ");
@@ -25,7 +32,6 @@ public class Triangle {
 				System.out.println();
 			}
 			
-			
 			System.out.println("\nLikbent triangel: ");
 			
 			for (int i = 1; i <= number; i += 2)
@@ -43,7 +49,7 @@ public class Triangle {
 		}
 		else
 		{
-			System.out.println("You didn't enter a positive integer!");
+			System.out.println("Du matade inte in ett positivt udda heltal!");
 		}
 		
 	}

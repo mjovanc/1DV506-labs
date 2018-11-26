@@ -4,9 +4,14 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Generates statistics of input of salaries
+ * with median, average and range.
+ * 
+ * @author Marcus Cvjeticanin
+ */
 public class Lonerevision
 {
-
 	public static void main(String[] args)
 	{
 		Scanner in = new Scanner(System.in);
@@ -22,6 +27,8 @@ public class Lonerevision
 		{
 			salaries.add(in.nextInt());
 		}
+		
+		in.close();
 		
 		Collections.sort(salaries);
 		
@@ -49,5 +56,4 @@ public class Lonerevision
 		System.out.printf("Medellön: %d\n", averageSalary);
 		System.out.printf("Lönespridning: %d\n", range);
 	}
-
 }

@@ -3,9 +3,17 @@ package mc222sn_lab2;
 import java.util.Random;
 import java.util.Scanner;
 
-public class HighLow {
-
-	public static void main(String[] args) {
+/**
+ * The guessing game High and Low. Generates a random
+ * number between 1 and 100 and letting the player guess
+ * correct the value.
+ * 
+ * @author Marcus Cvjeticanin
+ */
+public class HighLow
+{
+	public static void main(String[] args)
+	{
 		Random r = new Random();
 		Scanner in = new Scanner(System.in);
 		
@@ -42,5 +50,4 @@ public class HighLow {
 		
 		in.close();
 	}
-
 }

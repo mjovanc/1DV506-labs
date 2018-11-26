@@ -3,9 +3,16 @@ package mc222sn_lab2;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class OmvandOrdning {
-
-	public static void main(String[] args) {
+/**
+ * Reads any positive integers from the keyboard
+ * and then prints it out backwards.
+ * 
+ * @author Marcus Cvjeticanin
+ */
+public class OmvandOrdning
+{
+	public static void main(String[] args)
+	{
 		Scanner in = new Scanner(System.in);
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		
@@ -27,6 +34,8 @@ public class OmvandOrdning {
 			counter++;
 		}
 		
+		in.close();
+		
 		ArrayList <Integer> reverseNumbers = new ArrayList<Integer>();
 		
 		for (int i = numbers.size()-1; i >= 0; i--)
@@ -46,10 +55,5 @@ public class OmvandOrdning {
 					reverseNumbers.get(i) : reverseNumbers.get(i) + ", "
 			);
 		}
-		
-		
-		
-
 	}
-
 }

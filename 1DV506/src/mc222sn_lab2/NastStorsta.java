@@ -2,9 +2,16 @@ package mc222sn_lab2;
 
 import java.util.Scanner;
 
-public class NastStorsta {
-
-	public static void main(String[] args) {
+/**
+ * Reads ten integers and finds out the next biggest
+ * number of them and printing it out.
+ * 
+ * @author Marcus Cvjeticanin
+ */
+public class NastStorsta
+{
+	public static void main(String[] args)
+	{
 		Scanner in = new Scanner(System.in);
 		
 		System.out.print("Mata in 10 heltal: ");
@@ -37,14 +44,10 @@ public class NastStorsta {
 				}
 				
 			}
-			
 			in.close();
 			
 			System.out.printf("Det näst största talet är: %d", secondLargest);
 			break;
 		}
-		
-
 	}
-
 }
