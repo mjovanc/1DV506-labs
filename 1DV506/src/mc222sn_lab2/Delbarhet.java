@@ -13,7 +13,7 @@ public class Delbarhet
 	{
 		int counter = 0;
 		
-		for (int i = 100; i <= 200; i++)
+		for (int i = 100; i < 200; i++)
 		{
 			boolean divisibleByFour = i % 4 == 0;
 			boolean divisibleByFive = i % 5 == 0;

@@ -23,16 +23,14 @@ public class TartLjus
 			if (enoughCandles)
 			{
 				candlesRemaining -= age;
-				// System.out.printf("Before birthday %d, buy %d box(es) (Candles left: %d)\n", age, candleBoxes, candlesRemaining);
 			}
 			else
 			{
-				double amountOfBoxes = Math.ceil( ((double) age - candlesRemaining) / CANDLES_IN_BOX); // Beräknar hur många boxar ålder / 24 och avrundar upp
+				double amountOfBoxes = Math.ceil( ((double) age - candlesRemaining) / CANDLES_IN_BOX);
 				candleBoxes += (int) amountOfBoxes;
-				
 				candlesRemaining += (candleBoxes * CANDLES_IN_BOX - age);
 				
-				System.out.printf("Before birthday %d, buy %d box(es) (Candles left: %d)\n", age, candleBoxes, candlesRemaining);
+				System.out.printf("Before birthday %d, buy %d box(es)\n", age, candleBoxes, candlesRemaining);
 				
 				candleBoxes -= amountOfBoxes;
 				candleBoxesTotal += amountOfBoxes;
@@ -40,5 +38,4 @@ public class TartLjus
 		}
 		System.out.printf("\nTotal number of boxes: %d, Remaining candels: %d\n", candleBoxesTotal, candlesRemaining);
 	}
-
 }

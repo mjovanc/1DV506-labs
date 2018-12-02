@@ -19,7 +19,7 @@ public class Triangle
 		
 		in.close();
 		
-		if (number > 0)
+		if (number > 0 && (number % 2) != 0)
 		{
 			System.out.println("\nRätvinklig triangel: ");
 			
@@ -49,7 +49,7 @@ public class Triangle
 		}
 		else
 		{
-			System.out.println("Du matade inte in ett positivt udda heltal!");
+			System.err.println("Du matade inte in ett positivt udda heltal!");
 		}
 		
 	}
