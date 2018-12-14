@@ -19,7 +19,7 @@ public class Delbarhet
 			boolean divisibleByFive = i % 5 == 0;
 			boolean bothFourAndFive = i % 4 == 0 && i % 5 == 0;
 
-			if (divisibleByFour || divisibleByFive && !bothFourAndFive)
+			if ((divisibleByFour || divisibleByFive) && !bothFourAndFive)
 			{
 				if (counter == 10)
 				{
