@@ -4,13 +4,11 @@ public class Arrays
 {
 	public static void main(String[] args)
 	{
-		int[] n = {3,4,5,6,7,1,2,5,3,8};
-		int[] newArr = Arrays.sort(n);
+		int[] n = {3,4,5,6,7};
+		int[] sub = {4,5,6};
+		boolean subSeq = Arrays.hasSubsequence(n, sub);
 		
-		for (int i : newArr)
-		{
-			System.out.println(i);
-		}
+		System.out.println(subSeq);
 	}
 	
 	public static int sum(int[] arr)
@@ -108,7 +106,7 @@ public class Arrays
 		{
 			for (int j = 0; j < newArr.length; j++)
 			{
-				if (newArr[i] > newArr[j])
+				if (newArr[i] < newArr[j])
 				{
 					temp = newArr[i];
 					
@@ -119,6 +117,33 @@ public class Arrays
 		}
 		
 		return newArr;
+	}
+	
+	public static boolean hasSubsequence(int[] arr, int[] sub)
+	{
+		int length = 0;
+		
+		for (int i = 0; i < arr.length; i++)
+		{
+			// Testar om första heltalet är samma som index på arr
+			if (sub[i] == arr[i])
+			{
+				for (int j = 0; j < sub.length; j++)
+				{
+					if (sub[j] == arr[i + j])
+					{
+						length = length + 1;
+					}
+				}
+				
+				if (length == sub.length)
+					// TODO Auto-generated method stub	{
+					return true;
+				}
+			}
+		}
+		
+		return false;
 	}
 }
 
