@@ -25,16 +25,16 @@ public class Test {
 //		}
 		
 		Radio r1 = new Radio();
-		// System.out.println( r1.getSettings() );
+		System.out.println( r1.getSettings() );
 		r1.turnOn();
 		r1.setVolume(5);
-		// System.out.println( r1.getSettings() );
+		System.out.println( r1.getSettings() );
 		r1.setVolume(2);
 		System.out.println( r1.getSettings() );
 		r1.volumeUp();
 		r1.volumeUp();
 		r1.volumeUp();
-		// r1.volumeUp();
+		r1.volumeUp();
 		System.out.println( r1.getSettings() );
 		
 	}

@@ -40,7 +40,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("out of range = ==> error and neglect");
+				System.err.println("Volume out of range ==> error and neglect");
 			}
 		}
 		else
@@ -59,7 +59,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("out of range = ==> error and neglect");
+				System.err.println("Channel out of range ==> error and neglect");
 			}
 		}
 		else
@@ -78,7 +78,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("out of range = ==> error and neglect");
+				System.err.println("Volume > 5 ==> error and neglect");
 			}
 		}
 		else
@@ -97,7 +97,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("volume < 0 ==> error and neglect");
+				System.err.println("Volume < 0 ==> error and neglect");
 			}
 		}
 		else
@@ -116,7 +116,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("No more channels up!");
+				System.err.println("Channel > 10 ==> error and neglect");
 			}
 		}
 		else
@@ -135,7 +135,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("No more channels down!");
+				System.err.println("Channel < 0 ==> error and neglect");
 			}
 		}
 		else
