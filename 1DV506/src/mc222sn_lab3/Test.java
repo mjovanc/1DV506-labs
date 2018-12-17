@@ -39,14 +39,20 @@ public class Test {
 		System.out.println(p1.toString());
 		System.out.println(p2.toString());
 		
-//		if (p1.isEqualTo(p2))
-//		{
-//			System.out.println("The two points are equal");
-//		}
-//		else
-//		{
-//			System.out.println("The two points are NOT equal");
-//		}
+		// p1.moveToXY(10, 5);
+		p2.moveToXY(4, 2);
+		
+		System.out.println(p1.toString());
+		System.out.println(p2.toString());
+		
+		if (p1.isEqualTo(p2))
+		{
+			System.out.println("The two points are equal");
+		}
+		else
+		{
+			System.out.println("The two points are NOT equal");
+		}
 			
 		
 	}

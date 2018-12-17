@@ -53,8 +53,8 @@ public class Point
 	
 	public void moveToXY(int x, int y)
 	{
-		xPoint = y;
-		yPoint = x;
+		xPoint = x;
+		yPoint = y;
 	}
 
 }
