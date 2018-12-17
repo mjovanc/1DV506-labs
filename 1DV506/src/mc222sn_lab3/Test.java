@@ -24,18 +24,30 @@ public class Test {
 //			}
 //		}
 		
-		Radio r1 = new Radio();
-		System.out.println( r1.getSettings() );
-		r1.turnOn();
-		r1.setVolume(5);
-		System.out.println( r1.getSettings() );
-		r1.setVolume(2);
-		System.out.println( r1.getSettings() );
-		r1.volumeUp();
-		r1.volumeUp();
-		r1.volumeUp();
-		r1.volumeUp();
-		System.out.println( r1.getSettings() );
+		Point p1 = new Point();
+		Point p2 = new Point(3,4);
+		
+		System.out.println(p1.toString());
+		System.out.println(p2.toString());
+		
+		double dist = p1.distanceTo(p2);
+		System.out.println("Distance: " + dist);
+		
+		
+		p1.move(4, 2);
+		p2.move(-5, -7);
+		System.out.println(p1.toString());
+		System.out.println(p2.toString());
+		
+//		if (p1.isEqualTo(p2))
+//		{
+//			System.out.println("The two points are equal");
+//		}
+//		else
+//		{
+//			System.out.println("The two points are NOT equal");
+//		}
+			
 		
 	}
 

@@ -27,6 +27,8 @@ public class Radio
 	
 	public void turnOff()
 	{
+		volume = 1;
+		channel = 1;
 		on = false;
 	}
 
@@ -40,7 +42,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("Volume out of range ==> error and neglect");
+				System.err.println("New volume not within range!");
 			}
 		}
 		else
@@ -59,7 +61,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("Channel out of range ==> error and neglect");
+				System.err.println("New channel not within range!");
 			}
 		}
 		else
@@ -78,7 +80,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("Volume > 5 ==> error and neglect");
+				System.err.println("New volume not within range!");
 			}
 		}
 		else
@@ -97,7 +99,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("Volume < 0 ==> error and neglect");
+				System.err.println("New volume not within range!");
 			}
 		}
 		else
@@ -116,7 +118,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("Channel > 10 ==> error and neglect");
+				System.err.println("New channel not within range!");
 			}
 		}
 		else
@@ -135,7 +137,7 @@ public class Radio
 			}
 			else
 			{
-				System.err.println("Channel < 0 ==> error and neglect");
+				System.err.println("New channel not within range!");
 			}
 		}
 		else
