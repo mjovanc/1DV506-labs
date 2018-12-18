@@ -42,6 +42,22 @@ public class Fraction
 		}
 	}
 	
+//	public boolean zeroInNumerator(Fraction f) // vet inte om vi ska använda den här fortfarande?
+//	{
+//		if (f.numerator < 0)
+//		{
+//			return true;
+//		}
+//		else if (numerator < 0)
+//		{
+//			return true;
+//		}
+//		else
+//		{
+//			return false;
+//		}
+//	}
+	
 	public void add(Fraction f)
 	{
 		if (f.numerator < 0 || f.denominator < 0)
@@ -51,13 +67,63 @@ public class Fraction
 		else
 		{
 			int firstNumerator = numerator * f.denominator;
-			int firstDenominator = denominator * f.denominator;
 					
 			int secondNumerator = f.numerator * denominator;
 			int secondDenominator = f.denominator * denominator;
 			
 			int sumOfNumerators = firstNumerator + secondNumerator;
-			int sumOfDenominators = firstDenominator + secondDenominator;
+			
+			numerator = sumOfNumerators;
+			denominator = secondDenominator;
+		}
+	}
+	
+	public void subtract(Fraction f)
+	{
+		if (f.numerator < 0 || f.denominator < 0)
+		{
+			System.err.println("Error: Negative numerator!");
+		}
+		else
+		{
+			int firstNumerator = numerator * f.denominator;
+					
+			int secondNumerator = f.numerator * denominator;
+			int secondDenominator = f.denominator * denominator;
+			
+			int sumOfNumerators = firstNumerator - secondNumerator;
+			
+			numerator = sumOfNumerators;
+			denominator = secondDenominator;
+		}
+	}
+	
+	public void multiply(Fraction f)
+	{
+		if (f.numerator < 0 || f.denominator < 0)
+		{
+			System.err.println("Error: Negative numerator!");
+		}
+		else
+		{
+			int sumOfNumerators = numerator * f.numerator;
+			int sumOfDenominators = denominator * f.denominator;
+			
+			numerator = sumOfNumerators;
+			denominator = sumOfDenominators;
+		}
+	}
+	
+	public void divide(Fraction f)
+	{
+		if (f.numerator < 0 || f.denominator < 0)
+		{
+			System.err.println("Error: Negative numerator!");
+		}
+		else
+		{
+			int sumOfNumerators = numerator * f.denominator;
+			int sumOfDenominators = denominator * f.numerator;
 			
 			numerator = sumOfNumerators;
 			denominator = sumOfDenominators;
