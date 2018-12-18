@@ -42,5 +42,25 @@ public class Fraction
 		}
 	}
 	
-	
+	public void add(Fraction f)
+	{
+		if (f.numerator < 0 || f.denominator < 0)
+		{
+			System.err.println("Error: Negative numerator!");
+		}
+		else
+		{
+			int firstNumerator = numerator * f.denominator;
+			int firstDenominator = denominator * f.denominator;
+					
+			int secondNumerator = f.numerator * denominator;
+			int secondDenominator = f.denominator * denominator;
+			
+			int sumOfNumerators = firstNumerator + secondNumerator;
+			int sumOfDenominators = firstDenominator + secondDenominator;
+			
+			numerator = sumOfNumerators;
+			denominator = sumOfDenominators;
+		}
+	}
 }
