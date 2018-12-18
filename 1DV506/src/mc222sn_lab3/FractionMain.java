@@ -4,8 +4,8 @@ public class FractionMain
 {
 	public static void main(String[] args)
 	{
-		Fraction f1 = new Fraction(3, 8);
-		Fraction f2 = new Fraction(10, 3);
+		Fraction f1 = new Fraction(10, 7);
+		Fraction f2 = new Fraction(10, 8);
 		
 		System.out.println(f1.getNumerator());
 		System.out.println(f1.getDenominator());
@@ -23,12 +23,24 @@ public class FractionMain
 //		}
 		
 		// f1.add(f2);
-		f1.divide(f2);
+		// f1.divide(f2);
+		
+		if (f1.isEqualTo(f2))
+		{
+			System.out.println("Same fraction!");
+		}
+		else
+		{
+			System.out.println("Not the same fraction!");
+		}
 		
 		int numerator = f1.getNumerator();
 		int denominator = f1.getDenominator();
 		
-		System.out.printf("Sum of adding two fractions: %d/%d", numerator, denominator);
+		System.out.printf("Sum of adding two fractions: %d/%d\n", numerator, denominator);
+		
+		System.out.println(f1.toString());
+		System.out.println(f2.toString());
 		
 		
 	}

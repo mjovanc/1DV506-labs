@@ -129,4 +129,26 @@ public class Fraction
 			denominator = sumOfDenominators;
 		}
 	}
+	
+	public boolean isEqualTo(Fraction f)
+	{
+		boolean sameNumerator = (numerator == f.numerator);
+		boolean sameDenominator = (denominator == f.denominator);
+		
+		if (sameNumerator && sameDenominator)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public String toString()
+	{
+		String fraction = numerator + "/" + denominator;
+				
+		return fraction;
+	}
 }
