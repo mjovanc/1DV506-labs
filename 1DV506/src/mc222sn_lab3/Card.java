@@ -15,4 +15,9 @@ public class Card
 	{
 		return rank;
 	}
+	
+	public String getSuit()
+	{
+		return suit;
+	}
 }

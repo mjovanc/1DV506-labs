@@ -6,17 +6,18 @@ import java.util.Collections;
 public class Deck
 {
 	private enum Suits { Hearts, Diamonds, Spades, Clubs };
-	private ArrayList<String> cards;
+	private ArrayList<Card> cards;
 	
 	public Deck()
 	{
-		cards = new ArrayList<String>();
+		cards = new ArrayList<Card>();
 		
 		for (int i = 1; i <= 13; i++)
 		{
 			for (Suits s : Suits.values())
 			{
-				cards.add(i + " " + s);
+				Card c = new Card(i, s.toString());
+				cards.add(c);
 			}
 		}
 	}
@@ -31,10 +32,10 @@ public class Deck
 	
 	public String getCard()
 	{
-		String card = cards.get(cards.size() - 1);
+		Card card = cards.get(cards.size() - 1);
 		cards.remove(cards.size() - 1);
 		
-		return card;
+		return card.getRank() + " " + card.getSuit();
 	}
 	
 	public int cardsLeft()
