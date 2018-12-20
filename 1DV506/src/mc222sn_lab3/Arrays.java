@@ -47,7 +47,7 @@ public class Arrays
 		
 		//replaceAll() method // funkar inte
 		System.out.println("\nreplaceAll() method");
-		Arrays.replaceAll(n, 3, 2);
+		replaceAll(n, 7, 2);
 		for (int i : n)
 		{
 			System.out.println(i);
@@ -140,11 +140,11 @@ public class Arrays
 	
 	public static void replaceAll(int[] arr, int old, int nw)
 	{
-		for (int i : arr)
+		for (int i = 0; i < arr.length; i++)
 		{
-			if (i == old)
+			if (arr[i] == old)
 			{
-				i = nw;
+				arr[i] = nw;
 			}
 		}
 	}
@@ -201,6 +201,36 @@ public class Arrays
 //		}
 //		return false;
 //	}
+	
+	public boolean isLarger(int[] a1, int[] a2)
+	{
+		int length = 0;
+		
+		if (a1.length > a2.length)
+		{
+			length = a1.length;
+		}
+		else
+		{
+			length = a2.length;
+		}
+		
+		for (int i = 0; i < length; i++)
+		{
+			if (a1[i] > a2[i])
+			{
+				return true;
+			}
+			else if (a1.length > a2.length)
+			{
+				return true;
+			}
+			else if (a1.length < a2.length)
+			{
+				return false;
+			}
+		}
+	}
 }
 
 
