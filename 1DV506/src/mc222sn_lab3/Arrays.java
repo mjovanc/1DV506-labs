@@ -303,7 +303,7 @@ public class Arrays
 		if (a1.length < a2.length)
 		{
 			length = a1.length;
-		}
+		} 
 		else
 		{
 			length = a2.length;

@@ -1,7 +1,7 @@
 package mc222sn_lab3;
 
 /**
- * Swedish personal identity number
+ * Swedish personal identity number.
  * 
  * @version 1.0
  * @author Marcus Cvjeticanin
@@ -12,7 +12,7 @@ public class Pnr
 	 * The starting point of the program. Runs some tests
 	 * to see if the methods work as they should.
 	 * 
-	 * @param String[] Takes an array of strings as parameter.
+	 * @param String[] Takes an array of striCngs as parameter.
 	 */
 	public static void main(String[] args)
 	{
@@ -32,7 +32,7 @@ public class Pnr
 	}
 	
 	/**
-	 * This method returns the first part of the personal identity number.
+	 * Returns the first part of the personal identity number.
 	 * 
 	 * @param pnr Takes a string as parameter.
 	 * @return String Returns the first 6 numbers in a string.
@@ -43,7 +43,7 @@ public class Pnr
 	}
 	
 	/**
-	 * This method returns the second part of the personal identity number.
+	 * Returns the second part of the personal identity number.
 	 * 
 	 * @param pnr Takes a string as parameter.
 	 * @return String Returns the second 4 numbers in a string.
@@ -54,7 +54,7 @@ public class Pnr
 	}
 	
 	/**
-	 * This method returns true if the personal identity number
+	 * Returns true if the personal identity number
 	 * is a female one. 
 	 * 
 	 * @param pnr Takes a string as parameter.
@@ -76,7 +76,7 @@ public class Pnr
 	}
 	
 	/**
-	 * This method returns true if the personal identity number
+	 * Returns true if the personal identity number
 	 * are equal to another personal identity number.
 	 * 
 	 * @param pnr1 Takes a string as parameter.
@@ -96,5 +96,56 @@ public class Pnr
 		{
 			return false;
 		}
+	}
+	
+	/**
+	 * Checks if the personal identity number
+	 * is using a correct swedish format.
+	 * 
+	 * @param pnr Takes a string as parameter.
+	 * @return boolean Returns true or false.
+	 */
+	public static boolean isCorrect(String pnr)
+	{
+		String firstPart = getFirstPart(pnr);
+		String secondPart = getSecondPart(pnr);
+		String nineDigits = firstPart + secondPart.substring(0, 3);
+		
+		int[] digits = new int[9];
+		int[] oneTwo = {2,1,2,1,2,1,2,1,2};
+		int sum = 0;
+		
+		String years = firstPart.substring(0, 2);
+		String days = firstPart.substring(2, 4);
+		String months = firstPart.substring(4, 6);
+		
+		boolean correctYears = Integer.parseInt(years) < 100 && Integer.parseInt(years) > 0;
+		boolean correctDays = Integer.parseInt(days) <= 31 && Integer.parseInt(days) > 0;
+		boolean correctMonths = Integer.parseInt(months) <= 12 && Integer.parseInt(months) > 0;
+		
+		
+		for (int i = 0; i < 9; i++)
+		{
+			int digit = Integer.parseInt(nineDigits.substring(i, i+1));
+			int number = digit * oneTwo[i];
+			digits[i] = number;
+		}
+		
+		for (int i = 0; i < digits.length; i++)
+		{
+			sum = sum + digits[i];
+		}
+		
+		boolean correctFormat = correctYears && correctDays && correctMonths;
+		
+		if (correctFormat)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+
 	}
 }

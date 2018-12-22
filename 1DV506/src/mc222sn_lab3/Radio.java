@@ -1,11 +1,20 @@
 package mc222sn_lab3;
 
+/**
+ * The radio class.
+ * 
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class Radio
 {
 	private int volume;
 	private int channel;
 	private boolean on;
 	
+	/**
+	* Constructor for class Radio.
+	*/
 	public Radio()
 	{
 		volume = 1;
@@ -13,6 +22,12 @@ public class Radio
 		on = false;
 	}
 	
+
+	/**
+	 * Returns the settings for the radio.
+	 * 
+	 * @return String Returns a string with the settings for the radio.
+	 */
 	public String getSettings()
 	{
 		String settings = "Settings: On " + on + ", Channel " + channel + ", Volume: " + volume;
@@ -20,11 +35,17 @@ public class Radio
 		return settings;
 	}
 	
+	/**
+	 * Setting the radio on.
+	 */
 	public void turnOn()
 	{
 		on = true;
 	}
 	
+	/**
+	 * Turning off the radio.
+	 */
 	public void turnOff()
 	{
 		volume = 1;
@@ -32,6 +53,11 @@ public class Radio
 		on = false;
 	}
 
+	/**
+	 * Setting the volume.
+	 * 
+	 * @param int Takes an integer as parameter for the volume.
+	 */
 	public void setVolume(int newVolume)
 	{
 		if (on)
@@ -51,6 +77,11 @@ public class Radio
 		}
 	}
 	
+	/**
+	 * Setting the channel.
+	 * 
+	 * @param int Takes an integer as parameter for the channel.
+	 */
 	public void setChannel(int newChannel)
 	{
 		if (on)
@@ -70,6 +101,9 @@ public class Radio
 		}
 	}
 	
+	/**
+	 * Setting the volume one step up.
+	 */
 	public void volumeUp()
 	{
 		if (on)
@@ -89,6 +123,9 @@ public class Radio
 		}
 	}
 	
+	/**
+	 * Setting the volume one step down.
+	 */
 	public void volumeDown()
 	{
 		if (on)
@@ -108,6 +145,9 @@ public class Radio
 		}
 	}
 	
+	/**
+	 * Setting the channel one step up.
+	 */
 	public void channelUp()
 	{
 		if (on)
@@ -127,6 +167,9 @@ public class Radio
 		}
 	}
 	
+	/**
+	 * Setting the channel one step down.
+	 */
 	public void channelDown()
 	{
 		if (on)
