@@ -6,6 +6,11 @@ public class Arrays
 	{
 		int[] n = {10,8,3,4,29,5,6,7};
 		int[] sub = {4,5,6};
+		
+		int[] arrTest1 = {1,2,3,4};
+		int[] arrTest2 = {1,2,3};
+		int[] arrTest3 = {1,2,5};
+		int[] arrTest4 = {4,3};
 		// boolean subSeq = Arrays.hasSubsequence(n, sub);
 		
 		// System.out.println(subSeq);
@@ -64,8 +69,10 @@ public class Arrays
 		// hasSubSequence() method
 		
 		// isLarger() method
-		
-		
+		System.out.println("\nisLarger() method");
+		boolean largerArr = isLarger(arrTest2, arrTest3);
+		System.out.printf("%s vs %s\n", toString(arrTest2), toString(arrTest3));
+		System.out.println(largerArr);
 	}
 	
 	public static int sum(int[] arr)
@@ -202,11 +209,11 @@ public class Arrays
 //		return false;
 //	}
 	
-	public boolean isLarger(int[] a1, int[] a2)
+	public static boolean isLarger(int[] a1, int[] a2)
 	{
 		int length = 0;
 		
-		if (a1.length > a2.length)
+		if (a1.length < a2.length)
 		{
 			length = a1.length;
 		}
@@ -215,21 +222,21 @@ public class Arrays
 			length = a2.length;
 		}
 		
+		// if they are equal it goes to the next if()
 		for (int i = 0; i < length; i++)
 		{
-			if (a1[i] > a2[i])
-			{
-				return true;
-			}
-			else if (a1.length > a2.length)
-			{
-				return true;
-			}
-			else if (a1.length < a2.length)
+			if (a1[i] < a2[i])
 			{
 				return false;
 			}
 		}
+		
+		if (a1.length > a2.length)
+		{
+			return true;
+		}
+		
+		return false;
 	}
 }
 
