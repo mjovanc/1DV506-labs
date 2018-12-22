@@ -5,15 +5,15 @@ public class Arrays
 	public static void main(String[] args)
 	{
 		int[] n = {10,8,3,4,29,5,6,7};
-		int[] sub = {4,5,6};
 		
 		int[] arrTest1 = {1,2,3,4};
 		int[] arrTest2 = {1,2,3};
 		int[] arrTest3 = {1,2,5};
 		int[] arrTest4 = {4,3};
-		// boolean subSeq = Arrays.hasSubsequence(n, sub);
+		int[] arrTest5 = {1,2,3,4,5,6};
 		
-		// System.out.println(subSeq);
+		int[] sub = {2,3};
+		int[] sub2 = {4,5,6};
 		
 		// sum() method
 		System.out.println("sum() method");
@@ -61,12 +61,16 @@ public class Arrays
 		// sort() method
 		System.out.println("\nsort() method");
 		int[] arr3 = sort(n);
-		for (int i : arr3)
+		for (int i : arr3) 
 		{
 			System.out.println(i);
 		}
 		
-		// hasSubSequence() method
+		// hasSubsequence() method
+		boolean hasSub = hasSubsequence(arrTest5, sub2);
+		System.out.println("\nhasSubsequence() method");
+		System.out.printf("%s in %s\n", toString(sub2), toString(arrTest5));
+		System.out.println("T/F: " + hasSub);
 		
 		// isLarger() method
 		System.out.println("\nisLarger() method");
@@ -183,31 +187,31 @@ public class Arrays
 		return newArr;
 	}
 	
-//	public static boolean hasSubsequence(int[] arr, int[] sub)
-//	{
-//		int length = 0;
-//		
-//		for (int i = 0; i < arr.length; i++)
-//		{
-//			// Testar om första heltalet är samma som index på arr
-//			if (sub[i] == arr[i])
-//			{
-//				for (int j = 0; j < sub.length; j++)
-//				{
-//					if (sub[j] == arr[i + j])
-//					{
-//						length = length + 1;
-//					}
-//				}
-//				
-//				if (length == sub.length)
-//				{
-//					return true;
-//				}
-//			}
-//		}
-//		return false;
-//	}
+	public static boolean hasSubsequence(int[] arr, int[] sub)
+	{
+		int length = 0;
+		int index = 0;
+		
+		for (int i = 0; i < sub.length; i++)
+		{
+			for (int j = index; j < arr.length; j++)
+			{
+				if (sub[i] == arr[j])
+				{
+					index = i;
+					length = length + 1;
+					break;
+				}
+			}
+			
+			if (length == sub.length)
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
 	public static boolean isLarger(int[] a1, int[] a2)
 	{
@@ -222,7 +226,6 @@ public class Arrays
 			length = a2.length;
 		}
 		
-		// if they are equal it goes to the next if()
 		for (int i = 0; i < length; i++)
 		{
 			if (a1[i] < a2[i])
