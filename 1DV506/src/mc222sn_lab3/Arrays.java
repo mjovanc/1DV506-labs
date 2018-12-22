@@ -1,7 +1,19 @@
 package mc222sn_lab3;
 
+/**
+ * Some static methods to test with arrays.
+ * 
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class Arrays
 {
+	/**
+	 * The starting point of the program. Runs some tests
+	 * to see if the methods work as they should.
+	 * 
+	 * @param String[] Takes an array of strings as parameter.
+	 */
 	public static void main(String[] args)
 	{
 		int[] n = {10,8,3,4,29,5,6,7};
@@ -79,6 +91,12 @@ public class Arrays
 		System.out.println(largerArr);
 	}
 	
+	/**
+	 * This method returns the sum of an array that get passed in.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @return int Returns the sum of an array.
+	 */
 	public static int sum(int[] arr)
 	{
 		int sum = 0;
@@ -91,6 +109,12 @@ public class Arrays
 		return sum;
 	}
 	
+	/**
+	 * This method returns the array that get passed to a string.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @return String Returns the array to a string.
+	 */
 	public static String toString(int[] arr)
 	{
 		String str = "";
@@ -112,6 +136,14 @@ public class Arrays
 		return str;
 	}
 	
+	/**
+	 * Adding n number to every element of the passed array and
+	 * creating a new array and returns it.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @param n Takes a integer as parameter.
+	 * @return int[] Returns a new array.
+	 */
 	public static int[] addN(int[] arr, int n)
 	{
 		int[] newArr = new int[arr.length];
@@ -124,6 +156,13 @@ public class Arrays
 		return newArr;
 	}
 	
+	/**
+	 * Changing the order of the passed array to reversed order and
+	 * creating a new array and returns it.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @return int[] Returns a new array.
+	 */
 	public static int[] reverse(int[] arr)
 	{
 		int[] newArr = new int[arr.length];
@@ -138,6 +177,14 @@ public class Arrays
 		return newArr;
 	}
 	
+	/**
+	 * Checking every element of the passed array if it has
+	 * n number in it and returns true or false.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @param n Takes a integer as parameter.
+	 * @return boolean Returns true or false.
+	 */
 	public static boolean hasN(int[] arr, int n)
 	{
 		for (int i : arr)
@@ -149,6 +196,13 @@ public class Arrays
 		return false;
 	}
 	
+	/**
+	 * Replacing specific element values of the passed array.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @param old The old element value to replace.
+	 * @param nw The new element value to replace with.
+	 */
 	public static void replaceAll(int[] arr, int old, int nw)
 	{
 		for (int i = 0; i < arr.length; i++)
@@ -160,6 +214,12 @@ public class Arrays
 		}
 	}
 	
+	/**
+	 * Sorting the passed array and returns a new sorted array.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @return int[] Returns a new array of integers.
+	 */
 	public static int[] sort(int[] arr)
 	{
 		int[] newArr = new int[arr.length];
@@ -187,22 +247,37 @@ public class Arrays
 		return newArr;
 	}
 	
+	/**
+	 * Checking if the passed array sub exists as a sub sequence
+	 * of the passed array arr.
+	 * 
+	 * @param arr Takes an array of integers as parameter.
+	 * @param sub Takes an array of integers as parameter.
+	 * @return boolean Returns true or false.
+	 */
 	public static boolean hasSubsequence(int[] arr, int[] sub)
 	{
 		int length = 0;
 		int index = 0;
+		boolean run = true;
 		
 		for (int i = 0; i < sub.length; i++)
 		{
-			for (int j = index; j < arr.length; j++)
+			if (run)
 			{
-				if (sub[i] == arr[j])
+				for (int j = index; j < arr.length; j++)
 				{
-					index = i;
-					length = length + 1;
-					break;
+					if (sub[i] == arr[j])
+					{
+						index = i;
+						length = length + 1;
+						run = false;
+					}
 				}
+				
+				run = true;
 			}
+			
 			
 			if (length == sub.length)
 			{
@@ -213,6 +288,14 @@ public class Arrays
 		return false;
 	}
 	
+	/**
+	 * Checking if the first passed array is larger than
+	 * the second passed array.
+	 * 
+	 * @param a1 Takes an array of integers as parameter.
+	 * @param a2 Takes an array of integers as parameter.
+	 * @return boolean Returns true or false.
+	 */
 	public static boolean isLarger(int[] a1, int[] a2)
 	{
 		int length = 0;
