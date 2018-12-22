@@ -70,8 +70,8 @@ public class Arrays
 		
 		// isLarger() method
 		System.out.println("\nisLarger() method");
-		boolean largerArr = isLarger(arrTest2, arrTest3);
-		System.out.printf("%s vs %s\n", toString(arrTest2), toString(arrTest3));
+		boolean largerArr = isLarger(arrTest3, arrTest3);
+		System.out.printf("%s vs %s\n", toString(arrTest3), toString(arrTest3));
 		System.out.println(largerArr);
 	}
 	
@@ -228,6 +228,10 @@ public class Arrays
 			if (a1[i] < a2[i])
 			{
 				return false;
+			}
+			else if (a1[i] > a2[i])
+			{
+				return true;
 			}
 		}
 		
