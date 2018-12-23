@@ -1,10 +1,22 @@
 package mc222sn_lab3;
 
+/**
+ * The fraction class.
+ * 
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class Fraction
 {
 	private int numerator;
 	private int denominator;
 	
+	/**
+	* Constructor for Fraction.
+	* 
+	* @param int Getting the numerator.
+	* @param int Getting the denominator.
+	*/
 	public Fraction(int n, int d)
 	{
 		if (n == 0)
@@ -18,16 +30,31 @@ public class Fraction
 		}
 	}
 	
+	/**
+	 * Getting the fraction numerator.
+	 * 
+	 * @return int Returns the numerator value of the fraction.
+	 */
 	public int getNumerator()
 	{
 		return numerator;
 	}
 	
+	/**
+	 * Getting the fraction denominator.
+	 * 
+	 * @return int Returns the denominator value of the fraction.
+	 */
 	public int getDenominator()
 	{
 		return denominator;
 	}
 	
+	/**
+	 * Checking if the fraction is negative.
+	 * 
+	 * @return boolean Returns true or false.
+	 */
 	public boolean isNegative()
 	{
 		int fraction = numerator / denominator;
@@ -58,6 +85,11 @@ public class Fraction
 //		}
 //	}
 	
+	/**
+	 * Adds two fractions together.
+	 * 
+	 * @param Fraction Takes a fraction object as parameter.
+	 */
 	public void add(Fraction f)
 	{
 		if (f.numerator < 0 || f.denominator < 0)
@@ -78,6 +110,11 @@ public class Fraction
 		}
 	}
 	
+	/**
+	 * Subtracts two fractions.
+	 * 
+	 * @param Fraction Takes a fraction object as parameter.
+	 */
 	public void subtract(Fraction f)
 	{
 		if (f.numerator < 0 || f.denominator < 0)
@@ -98,6 +135,11 @@ public class Fraction
 		}
 	}
 	
+	/**
+	 * Multiplies two fractions.
+	 * 
+	 * @param Fraction Takes a fraction object as parameter.
+	 */
 	public void multiply(Fraction f)
 	{
 		if (f.numerator < 0 || f.denominator < 0)
@@ -114,6 +156,11 @@ public class Fraction
 		}
 	}
 	
+	/**
+	 * Dividing two fractions.
+	 * 
+	 * @param Fraction Takes a fraction object as parameter.
+	 */
 	public void divide(Fraction f)
 	{
 		if (f.numerator < 0 || f.denominator < 0)
@@ -130,6 +177,12 @@ public class Fraction
 		}
 	}
 	
+	/**
+	 * Checking two fractions if they are equal to each other.
+	 * 
+	 * @param Fraction Takes a fraction object as parameter.
+	 * @return boolean Returns true or false.
+	 */
 	public boolean isEqualTo(Fraction f)
 	{
 		boolean sameNumerator = (numerator == f.numerator);
@@ -145,6 +198,11 @@ public class Fraction
 		}
 	}
 	
+	/**
+	 * Getting the fraction object to a string.
+	 * 
+	 * @return String Returns the fraction to a nice format.
+	 */
 	public String toString()
 	{
 		String fraction = numerator + "/" + denominator;

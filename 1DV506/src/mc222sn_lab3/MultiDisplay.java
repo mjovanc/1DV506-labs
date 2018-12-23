@@ -12,7 +12,8 @@ public class MultiDisplay
 	private int displayCount;
 	
 	/**
-	* Constructor for MultiDisplay
+	* Constructor for MultiDisplay.
+	* Sets display message to empty and display count.
 	*/
 	public MultiDisplay()
 	{
