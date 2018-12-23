@@ -13,8 +13,8 @@ public class Radio
 	private boolean on;
 	
 	/**
-	* Constructor for class Radio.
-	*/
+	 * Constructor for class Radio.
+	 */
 	public Radio()
 	{
 		volume = 1;
