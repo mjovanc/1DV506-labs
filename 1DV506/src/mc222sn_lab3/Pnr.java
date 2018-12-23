@@ -16,18 +16,38 @@ public class Pnr
 	 */
 	public static void main(String[] args)
 	{
-		// String pnr = getFirstPart("910224-0695");
-		// System.out.println("Personnr: " + pnr);
+		// getFirstPart() method
+		System.out.println("getFirstPart() method");
+		String pnr1 = getFirstPart("910224-0292");
+		System.out.println("Personnr: " + pnr1);
 		
-		boolean equal = areEqual("910224-0695", "910224-0695");
+		// getSecondPart() method
+		System.out.println("\ngetSecondPart() method");
+		String pnr2 = getSecondPart("910224-0292");
+		System.out.println("Personnr: " + pnr2);
 		
-		if (equal)
+		// isFemaleNumber() method
+		System.out.println("\nisFemaleNumber() method");
+		boolean female = isFemaleNumber("910224-0292");
+		if (female)
 		{
-			System.out.println("Equal!!");
+			System.out.println("Female!");
 		}
 		else 
 		{
-			System.out.println("NOT Equal!!");
+			System.out.println("Male!");
+		}
+		
+		// areEqual() method
+		System.out.println("\nareEqual() method");
+		boolean equal = areEqual("910224-0695", "910224-0292");
+		if (equal)
+		{
+			System.out.println("Equal!");
+		}
+		else 
+		{
+			System.out.println("NOT Equal!");
 		}
 	}
 	
@@ -50,7 +70,7 @@ public class Pnr
 	 */
 	public static String getSecondPart(String pnr)
 	{
-		return pnr.substring(8, 11);
+		return pnr.substring(7, 11);
 	}
 	
 	/**
@@ -85,8 +105,8 @@ public class Pnr
 	 */
 	public static boolean areEqual(String pnr1, String pnr2)
 	{
-		int firstPersonalNumber = Integer.parseInt(getFirstPart(pnr1) + getSecondPart(pnr1));
-		int secondPersonalNumber = Integer.parseInt(getFirstPart(pnr2) + getSecondPart(pnr2));
+		long firstPersonalNumber = Long.parseLong(getFirstPart(pnr1) + getSecondPart(pnr1));
+		long secondPersonalNumber = Long.parseLong(getFirstPart(pnr2) + getSecondPart(pnr2));
 		
 		if (firstPersonalNumber == secondPersonalNumber)
 		{
