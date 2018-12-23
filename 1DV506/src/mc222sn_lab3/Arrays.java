@@ -62,7 +62,7 @@ public class Arrays
 			System.out.println("Letter N missing in array!");
 		}
 		
-		//replaceAll() method // funkar inte
+		//replaceAll() method
 		System.out.println("\nreplaceAll() method");
 		replaceAll(n, 7, 2);
 		for (int i : n)
@@ -277,7 +277,6 @@ public class Arrays
 				
 				run = true;
 			}
-			
 			
 			if (length == sub.length)
 			{

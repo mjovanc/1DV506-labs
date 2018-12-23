@@ -21,7 +21,6 @@ public class Radio
 		channel = 1;
 		on = false;
 	}
-	
 
 	/**
 	 * Returns the settings for the radio.
@@ -188,5 +187,4 @@ public class Radio
 			System.err.println("Radio off ==> No adjustment possible");
 		}
 	}
-	
 }

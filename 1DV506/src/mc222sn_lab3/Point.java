@@ -62,7 +62,7 @@ public class Point
 	}
 	
 	/**
-	 * Getting the distance between oen point and another.
+	 * Getting the distance between two points.
 	 * 
 	 * @param Point Takes a Point as parameter.
 	 * @return double Returns the distance.
@@ -74,16 +74,27 @@ public class Point
 		return distance;
 	}
 	
+	/**
+	 * Moving a point in sideways by x and y units.
+	 * 
+	 * @param int Takes an int as parameter x.
+	 * @param int Takes an int as parameter y.
+	 */
 	public void move(int x, int y)
 	{
 		xPoint = xPoint + x;
 		yPoint = yPoint + y;
 	}
 	
+	/**
+	 * Moving a point to new coordinates.
+	 * 
+	 * @param int Takes an int as parameter x.
+	 * @param int Takes an int as parameter y.
+	 */
 	public void moveToXY(int x, int y)
 	{
 		xPoint = x;
 		yPoint = y;
 	}
-
 }
