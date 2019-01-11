@@ -1,10 +1,22 @@
 package mc222sn_lab3;
 
+/**
+ * The fraction main class.
+ *
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class FractionMain
 {
+	/**
+	 * The starting point of the program. Runs some tests
+	 * to see if the methods work as they should.
+	 *
+	 * @param args Takes an array of strings as parameter.
+	 */
 	public static void main(String[] args)
 	{
-		Fraction f1 = new Fraction(10, 7);
+		Fraction f1 = new Fraction(-10, 7);
 		Fraction f2 = new Fraction(10, 8);
 		
 		System.out.println(f1.getNumerator());
@@ -13,14 +25,14 @@ public class FractionMain
 		System.out.println(f2.getNumerator());
 		System.out.println(f2.getDenominator());
 		
-//		if (f1.isNegative())
-//		{
-//			System.out.println("The fraction is negative!");
-//		}
-//		else
-//		{
-//			System.out.println("The fraction is NOT negative!");
-//		}
+		if (f1.isNegative())
+		{
+			System.out.println("The fraction is negative!");
+		}
+		else
+		{
+			System.out.println("The fraction is NOT negative!");
+		}
 		
 		// f1.add(f2);
 		// f1.divide(f2);
@@ -40,9 +52,6 @@ public class FractionMain
 		System.out.printf("Sum of adding two fractions: %d/%d\n", numerator, denominator);
 		
 		System.out.println(f1.toString());
-		System.out.println(f2.toString());
-		
-		
+		System.out.println(f2.toString());	
 	}
-
 }

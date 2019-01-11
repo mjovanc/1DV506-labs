@@ -14,8 +14,8 @@ public class Card
 	/**
 	* Constructor for Card.
 	* 
-	* @param int Getting the rank value.
-	* @param String Getting the suit.
+	* @param r Getting the rank value.
+	* @param s Getting the suit.
 	*/
 	public Card(int r, String s)
 	{

@@ -2,7 +2,7 @@ package mc222sn_lab3;
 
 /**
  * The radio class.
- * 
+ *
  * @version 1.0
  * @author Marcus Cvjeticanin
  */
@@ -11,7 +11,7 @@ public class Radio
 	private int volume;
 	private int channel;
 	private boolean on;
-	
+
 	/**
 	 * Constructor for class Radio.
 	 */
@@ -24,16 +24,16 @@ public class Radio
 
 	/**
 	 * Returns the settings for the radio.
-	 * 
+	 *
 	 * @return String Returns a string with the settings for the radio.
 	 */
 	public String getSettings()
 	{
 		String settings = "Settings: On " + on + ", Channel " + channel + ", Volume: " + volume;
-		
+
 		return settings;
 	}
-	
+
 	/**
 	 * Setting the radio on.
 	 */
@@ -41,7 +41,7 @@ public class Radio
 	{
 		on = true;
 	}
-	
+
 	/**
 	 * Turning off the radio.
 	 */
@@ -54,8 +54,8 @@ public class Radio
 
 	/**
 	 * Setting the volume.
-	 * 
-	 * @param int Takes an integer as parameter for the volume.
+	 *
+	 * @param newVolume Takes an integer as parameter for the volume.
 	 */
 	public void setVolume(int newVolume)
 	{
@@ -75,10 +75,10 @@ public class Radio
 			System.err.println("Radio off ==> No adjustment possible");
 		}
 	}
-	
+
 	/**
 	 * Setting the channel.
-	 * 
+	 *
 	 * @param int Takes an integer as parameter for the channel.
 	 */
 	public void setChannel(int newChannel)
@@ -99,7 +99,7 @@ public class Radio
 			System.err.println("Radio off ==> No adjustment possible");
 		}
 	}
-	
+
 	/**
 	 * Setting the volume one step up.
 	 */
@@ -121,7 +121,7 @@ public class Radio
 			System.err.println("Radio off ==> No adjustment possible");
 		}
 	}
-	
+
 	/**
 	 * Setting the volume one step down.
 	 */
@@ -143,7 +143,7 @@ public class Radio
 			System.err.println("Radio off ==> No adjustment possible");
 		}
 	}
-	
+
 	/**
 	 * Setting the channel one step up.
 	 */
@@ -165,7 +165,7 @@ public class Radio
 			System.err.println("Radio off ==> No adjustment possible");
 		}
 	}
-	
+
 	/**
 	 * Setting the channel one step down.
 	 */
