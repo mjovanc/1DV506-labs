@@ -1,8 +1,8 @@
 package mc222sn_lab2;
 
 /**
- * Prints all elements of the array, then changing
- * the elements order and then prints all the elements again.
+ * Prints all elements of the array, then changing the elements order and then
+ * prints all the elements again.
  * 
  * @author Marcus Cvjeticanin
  */
@@ -31,7 +31,7 @@ public class BytaPlats
 	    		text[text.length - (i + 1)] = first;		  
 	    	 }
 	    }
-	      
+	    
 	   System.out.println(text);
 	}
 }
