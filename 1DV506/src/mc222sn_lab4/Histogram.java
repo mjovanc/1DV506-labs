@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Histogram
 {
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException
 	{
-		String path = "/home/qexcc/Documents/heltal.dat";
+		String path = args[0];
 		File inputNumbers = new File(path);
 		
 		System.out.printf("Läser heltal från filen: %s\n", path);
@@ -18,97 +18,79 @@ public class Histogram
 		System.out.println("Histogram");
 		for (int i = 1; i < 100; i = i + 10)
 		{
-			System.out.printf("  %-2d - %-3d | \n", i, i + 9);
+			int occurs = Histogram.occurs(inputNumbers, i, i + 9);
+			StringBuilder asterix = new StringBuilder();
+			
+			for (int j = 0; j < occurs; j++)
+			{
+				asterix.append("*");
+			}
+			
+			System.out.printf("  %-2d - %-3d | %s \n", i, i + 9, asterix);
 		}
-		
-		System.out.println();
-		Histogram.occurs(inputNumbers);
 	}
 	
-	public static int countInInterval(File numbers)
+	public static int countInInterval(File numbers) throws FileNotFoundException
 	{
 		int count = 0;
 		
-		try
-		{
-			Scanner in = new Scanner(numbers);
+		Scanner in = new Scanner(numbers);
 
-			while(in.hasNextInt())
-			{
-				int value = in.nextInt();
-				
-				if (value > 0 && value <= 100)
-				{
-					count++;
-				}
-			}
-			
-			in.close();
-		}
-		catch (FileNotFoundException e)
+		while(in.hasNextInt())
 		{
-			System.err.println("Could not find the file.");
+			int value = in.nextInt();
+				
+			if (value > 0 && value <= 100)
+			{
+				count++;
+			}
 		}
+			
+		in.close();
 		
 		return count;
 	}
 	
-	public static int countOutInterval(File numbers)
+	public static int countOutInterval(File numbers) throws FileNotFoundException
 	{
 		int count = 0;
 		
-		try
-		{
-			Scanner in = new Scanner(numbers);
+		Scanner in = new Scanner(numbers);
 
-			while(in.hasNextInt())
+		while(in.hasNextInt())
+		{
+			int value = in.nextInt();
+			
+			if (value < 1 || value > 100)
 			{
-				int value = in.nextInt();
-				
-				if (value < 1 || value > 100)
-				{
-					count++;
-				}
+				count++;
 			}
 			
-			in.close();
 		}
-		catch (FileNotFoundException e)
-		{
-			System.err.println("Could not find the file.");
-		}
+		
+		in.close();
 		
 		return count;
 	}
 	
-	public static void occurs(File numbers)
+	public static int occurs(File numbers, int numberFrom, int numberTo) throws FileNotFoundException
 	{
 		int count = 0;
 		
-		try
-		{
-			Scanner in = new Scanner(numbers);
+		Scanner in = new Scanner(numbers);
 
-			while(in.hasNextInt())
-			{
-				int value = in.nextInt();
-				
-				if (value > 0 && value <= 10)
-				{
-					count++;
-				}
-			}
-			
-			for (int i = 0; i < count; i++)
-			{
-				System.out.print("*");
-			}
-			
-			in.close();
-		}
-		catch (FileNotFoundException e)
+		while(in.hasNextInt())
 		{
-			System.err.println("Could not find the file.");
+			int value = in.nextInt();
+			
+			if (value >= numberFrom && value <= numberTo)
+			{
+				count++;
+			}
 		}
+			
+		in.close();
+		
+		return count;
 	}
 }
