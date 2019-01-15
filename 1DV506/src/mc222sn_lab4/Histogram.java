@@ -4,8 +4,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * The Histogram class.
+ *
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class Histogram
 {
+	/**
+	 * The starting point of the program. The path to the file
+	 * is given by the first argument.
+	 * 
+	 * @param String[] Takes an array of strings as parameter.
+	 * @throws FileNotFoundException
+	 */
 	public static void main(String[] args) throws FileNotFoundException
 	{
 		String path = args[0];
@@ -30,6 +43,13 @@ public class Histogram
 		}
 	}
 	
+	/**
+	 * Counting how many numbers are between 1 <= 100.
+	 *
+	 * @param numbers Takes a File object as parameter.
+	 * @throws FileNotFoundException
+	 * @return int Returns the count.
+	 */
 	private static int countInInterval(File numbers) throws FileNotFoundException
 	{
 		int count = 0;
@@ -51,6 +71,14 @@ public class Histogram
 		return count;
 	}
 	
+	/**
+	 * Counting how many numbers are less than 0
+	 * or more than 100.
+	 *
+	 * @param numbers Takes a File object as parameter.
+	 * @throws FileNotFoundException
+	 * @return int Returns the count.
+	 */
 	private static int countOutInterval(File numbers) throws FileNotFoundException
 	{
 		int count = 0;
@@ -73,6 +101,15 @@ public class Histogram
 		return count;
 	}
 	
+	/**
+	 * Counting how many numbers are between to given values.
+	 *
+	 * @param numbers Takes a File object as parameter.
+	 * @param numberFrom The start value.
+	 * @param numberTo The end value.
+	 * @throws FileNotFoundException
+	 * @return int Returns the count.
+	 */
 	private static int occurs(File numbers, int numberFrom, int numberTo) throws FileNotFoundException
 	{
 		int count = 0;
