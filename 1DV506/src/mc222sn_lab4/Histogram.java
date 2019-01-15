@@ -30,7 +30,7 @@ public class Histogram
 		}
 	}
 	
-	public static int countInInterval(File numbers) throws FileNotFoundException
+	private static int countInInterval(File numbers) throws FileNotFoundException
 	{
 		int count = 0;
 		
@@ -51,7 +51,7 @@ public class Histogram
 		return count;
 	}
 	
-	public static int countOutInterval(File numbers) throws FileNotFoundException
+	private static int countOutInterval(File numbers) throws FileNotFoundException
 	{
 		int count = 0;
 		
@@ -73,7 +73,7 @@ public class Histogram
 		return count;
 	}
 	
-	public static int occurs(File numbers, int numberFrom, int numberTo) throws FileNotFoundException
+	private static int occurs(File numbers, int numberFrom, int numberTo) throws FileNotFoundException
 	{
 		int count = 0;
 		
