@@ -10,11 +10,12 @@ public class RaknaTecken
 	{
 		String path = args[0];
 		File inputNumbers = new File(path);
-		System.out.printf("Antal stora bokstäver: %d\n", RaknaTecken.capitalLettersCount(inputNumbers));
-		System.out.printf("Antal små bokstäver: %d\n", RaknaTecken.lowercaseLettersCount(inputNumbers));
+		System.out.printf("Antal stora bokstäver: %d\n", RaknaTecken.cLettersCount(inputNumbers));
+		System.out.printf("Antal små bokstäver: %d\n", RaknaTecken.lcLettersCount(inputNumbers));
+		System.out.printf("Antal \"whitespaces\": %d\n", RaknaTecken.wsCount(inputNumbers));
 	}
 	
-	private static int capitalLettersCount(File inputFile) throws FileNotFoundException
+	private static int cLettersCount(File inputFile) throws FileNotFoundException
 	{
 		Scanner in = new Scanner(inputFile);
 		
@@ -27,9 +28,9 @@ public class RaknaTecken
 			for (int i = 0; i < line.length(); i++)
 			{
 				char letter = line.charAt(i);
-				boolean upper = Character.isUpperCase(letter);
+				boolean upperCase = Character.isUpperCase(letter);
 				
-				if (upper)
+				if (upperCase)
 				{
 					count++;
 				}
@@ -41,7 +42,7 @@ public class RaknaTecken
 		return count;
 	}
 	
-	private static int lowercaseLettersCount(File inputFile) throws FileNotFoundException
+	private static int lcLettersCount(File inputFile) throws FileNotFoundException
 	{
 		Scanner in = new Scanner(inputFile);
 		
@@ -54,9 +55,36 @@ public class RaknaTecken
 			for (int i = 0; i < line.length(); i++)
 			{
 				char letter = line.charAt(i);
-				boolean upper = Character.isLowerCase(letter);
+				boolean lowerCase = Character.isLowerCase(letter);
 				
-				if (upper)
+				if (lowerCase)
+				{
+					count++;
+				}
+			}
+		}
+		
+		in.close();
+		
+		return count;
+	}
+	
+	private static int wsCount(File inputFile) throws FileNotFoundException
+	{
+		Scanner in = new Scanner(inputFile);
+		
+		int count = 0;
+		
+		while(in.hasNextLine())
+		{
+			String line = in.nextLine();
+			
+			for (int i = 0; i < line.length(); i++)
+			{
+				char letter = line.charAt(i);
+				boolean whiteSpace = Character.isWhitespace(letter);
+				
+				if (whiteSpace)
 				{
 					count++;
 				}
