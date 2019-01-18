@@ -1,23 +1,36 @@
-package stack;
+package mc222sn_lab4.stack;
 
 import java.util.Iterator;
 
 public class StackMain implements Stack
 {
+	private int length = 4;
+	private int size = 0;
+	private int[] values;
+	
+	public StackMain()
+	{
+		values = new int[length];
+	}
+	
 	public static void main(String[] args)
 	{
-		
+		StackMain stack = new StackMain();
+		System.out.printf("Stack size: %d\n", stack.size()); 
+		System.out.printf("Stack empty: %b\n", stack.isEmpty());
 	}
 
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
+		if (size == 0)
+		{
+			return true;
+		}
 		return false;
 	}
 

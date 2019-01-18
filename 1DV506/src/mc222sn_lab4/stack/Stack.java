@@ -1,4 +1,4 @@
-package stack;
+package mc222sn_lab4.stack;
 
 import java.util.Iterator;
 
