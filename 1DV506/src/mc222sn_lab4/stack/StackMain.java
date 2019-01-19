@@ -33,52 +33,55 @@ public class StackMain implements Stack
 	@Override
 	public void push(Object element)
 	{
-		if (size == length)
+		if (size == length || size == length - 1)
 		{
 			resize();
 		}
 		
-		values[size++] = (int) element;
+		values[size++] = element;
 	}
 
 	@Override
-	public Object pop() {
+	public Object pop()
+	{
 		Object value = values[size - 1];
 		size--;
-		
+			
 		length = length - 1;
 		Object[] tmp = new Object[length];
-		
+			
 		for (int i = 0; i < size; i++)
 		{
 			tmp[i] = values[i];
-			values = tmp;
 		}
-		System.out.println();
+		values = tmp;
+
 		return value;
 	}
 
 	@Override
-	public Object peek() {
+	public Object peek()
+	{
 		return values[size - 1];
 	}
 	
 	@Override
-	public Iterator<Object> iterator() {
-		StackIterator it = new StackIterator(values); 
-		return it;
+	public Iterator<Object> iterator()
+	{
+		 return new StackIterator(values, size);
 	}
 	
 	private void resize()
 	{
 		length = length * 2;
-		Object [] tmp = new Object[length];
+		Object[] tmp = new Object[length];
 		
 		for (int i = 0; i < size; i++)
 		{
 			tmp[i] = values[i];
-			values = tmp;
 		}
+		
+		values = tmp;
 	}
 
 	

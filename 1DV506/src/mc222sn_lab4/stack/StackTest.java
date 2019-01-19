@@ -8,15 +8,19 @@ public class StackTest
 	{
 		StackMain stack = new StackMain();
 		
+		// System.out.printf("Pop: %d\n", stack.pop());
+		
 		System.out.printf("Stack size: %d\n", stack.size());
-		System.out.printf("Stack empty: %b\n", stack.isEmpty());
+		// System.out.printf("Stack empty: %b\n", stack.isEmpty());
 		
 		int one = 123;
 		int two = 223;
-		stack.push(one);
+		int three = 323;
+		int four = 423;
+		int five = 523;
+		
 		stack.push(one);
 		stack.push(two);
-		stack.push(one);
 		
 		System.out.printf("Stack empty: %b\n", stack.isEmpty());
 		System.out.printf("Stack size: %d\n", stack.size());
@@ -24,6 +28,12 @@ public class StackTest
 		
 		System.out.printf("Pop: %d\n", stack.pop());
 		System.out.printf("Stack size: %d\n", stack.size());
+		System.out.printf("Peek: %d\n\n", stack.peek());
+		
+		stack.push(three);
+		stack.push(four);
+		stack.push(five);
+
 		
 		Iterator<Object> it = stack.iterator();
 		

@@ -4,27 +4,23 @@ import java.util.Iterator;
 
 public class StackIterator implements Iterator<Object>
 {
-	private int current;
-	private Object[] items;
+	private int nextElement = 0;
+	private final Object[] elements;
+	private final int max;
 
-	public StackIterator(Object[] items)
+	public StackIterator(Object[] items, int size)
 	{        
-		this.current = 0;
-		this.items = items;
+		elements = items;
+		max = size;
 	}
 	
 	public boolean hasNext()
 	{
-		return (current < items.length);
+		return nextElement < max;
 	}
 
 	public Object next()
 	{
-		return items[current++];    
-	}
-	
-	public void remove()
-	{
-		throw new UnsupportedOperationException();
+		return elements[nextElement++];
 	}
 }
