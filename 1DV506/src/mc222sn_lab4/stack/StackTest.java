@@ -8,7 +8,9 @@ public class StackTest
 	{
 		StackMain stack = new StackMain();
 		
-		// System.out.printf("Pop: %d\n", stack.pop());
+		System.out.printf("Peek: %d\n", stack.peek());
+		
+		System.out.printf("Pop: %d\n", stack.pop());
 		
 		System.out.printf("Stack size: %d\n", stack.size());
 		// System.out.printf("Stack empty: %b\n", stack.isEmpty());
@@ -37,13 +39,10 @@ public class StackTest
 		
 		Iterator<Object> it = stack.iterator();
 		
+		System.out.println("Iteration over stack elements:");
 		while (it.hasNext())
 		{
 			System.out.println(it.next());
 		}
-		
-		// System.out.println(stack.iterator());
-		
-		// System.out.printf("Stack iterator: %d\n", stackIt);
 	}
 }

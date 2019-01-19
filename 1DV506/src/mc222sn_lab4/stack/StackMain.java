@@ -44,25 +44,42 @@ public class StackMain implements Stack
 	@Override
 	public Object pop()
 	{
-		Object value = values[size - 1];
-		size--;
-			
-		length = length - 1;
-		Object[] tmp = new Object[length];
-			
-		for (int i = 0; i < size; i++)
+		try
 		{
-			tmp[i] = values[i];
-		}
-		values = tmp;
+			Object value = values[size - 1];
+			size--;
+				
+			length = length - 1;
+			Object[] tmp = new Object[length];
+				
+			for (int i = 0; i < size; i++)
+			{
+				tmp[i] = values[i];
+			}
+			values = tmp;
 
-		return value;
+			return value;
+		}
+		catch (IndexOutOfBoundsException e)
+		{
+			System.err.println("Can't pop empty array!");
+		}
+		
+		return null;
 	}
 
 	@Override
 	public Object peek()
 	{
-		return values[size - 1];
+		if (size != 0)
+		{
+			return values[size - 1];
+		}
+		else
+		{
+			throw new IllegalStateException("The stack is empty!");
+		}
+		
 	}
 	
 	@Override
