@@ -13,7 +13,17 @@ public class News
 		newspaper = np;
 	}
 	
-	public String getNews()
+	public News getNews()
+	{
+		return this;
+	}
+	
+	public Newspaper getNewspaper()
+	{
+		return newspaper;
+	}
+	
+	public String displayNews()
 	{
 		return date + " - " + title + "\t\t// " + newspaper.getName();
 	}

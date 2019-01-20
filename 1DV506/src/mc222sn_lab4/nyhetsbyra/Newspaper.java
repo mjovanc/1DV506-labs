@@ -2,28 +2,53 @@ package mc222sn_lab4.nyhetsbyra;
 
 import java.util.ArrayList;
 
+/**
+ * The Newspaper class.
+ *
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class Newspaper
 {
 	private String name;
-	private ArrayList<Object> news = new ArrayList<Object>();
-	private Object newsAgency;
+	private ArrayList<News> news = new ArrayList<News>();
 	
-	public Newspaper(String n, Object na)
+	/**
+	* Constructor for Newspaper.
+	* Setting newspaper name.
+	* 
+	* @param n A string with the name for the newspaper.
+	*/
+	public Newspaper(String n)
 	{
 		name = n;
-		newsAgency = na;
 	}
 	
-	public void getFirstNews(Object latestNews)
-	{
-		news.add(latestNews);
-	}
-	
-	public ArrayList<Object> getNews()
+	/**
+	 * Get all news from Newspaper object.
+	 * 
+	 * @return ArrayList<News>
+	 */
+	public ArrayList<News> getAllNews()
 	{
 		return news;
 	}
 	
+	/**
+	 * Add a News object to the Newspaper ArrayList news.
+	 * 
+	 * @param n News object.
+	 */
+	public void addNews(News n)
+	{
+		news.add(n);
+	}
+	
+	/**
+	 * Add a News object to the NewsPaper ArrayList news.
+	 * 
+	 * @return String Returns the name of the Newspaper object.
+	 */
 	public String getName()
 	{
 		return name;
