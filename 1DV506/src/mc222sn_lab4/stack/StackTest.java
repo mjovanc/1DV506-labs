@@ -2,8 +2,20 @@ package mc222sn_lab4.stack;
 
 import java.util.Iterator;
 
+/**
+ * The StackTest class.
+ *
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class StackTest
 {
+	/**
+	 * The starting point of the program. Runs some tests
+	 * to see if the methods work as they should.
+	 *
+	 * @param args Takes an array of strings as parameter.
+	 */
 	public static void main(String[] args)
 	{
 		StackMain stack = new StackMain();
