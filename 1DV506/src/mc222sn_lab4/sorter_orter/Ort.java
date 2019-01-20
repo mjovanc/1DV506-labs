@@ -13,11 +13,12 @@ public class Ort implements Comparable<Ort>
 
 	@Override
 	public int compareTo(Ort o) {
-		boolean city = this.city.equals(o.getCity());
-		boolean pc = this.postalCode == o.getPostalCode();
-		boolean equals = city && pc;
+		if (postalCode == o.postalCode)
+		{
+			return postalCode - o.postalCode;
+		}
 		
-		return equals ? 1 : -1;
+		return Integer.compare(postalCode, o.postalCode);
 	}
 	
 	public String getCity()
