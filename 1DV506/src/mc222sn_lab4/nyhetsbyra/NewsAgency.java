@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class NewsAgency
 {
 	private String name;
-	private ArrayList<Object> latestNews = new ArrayList<Object>();
+	private ArrayList<News> latestNews = new ArrayList<News>();
 	private ArrayList<Object> registeredNewspapers = new ArrayList<Object>();
 	
 	public NewsAgency(String n)
@@ -16,7 +16,16 @@ public class NewsAgency
 	public void registerNewspaper(Newspaper np)
 	{
 		registeredNewspapers.add(np);
-		np.getFirstNews(latestNews);
+	}
+	
+	public void addNews(News n)
+	{
+		latestNews.add(n);
+	}
+	
+	public ArrayList<News> getNews()
+	{
+		return latestNews;
 	}
 	
 	public String getName()

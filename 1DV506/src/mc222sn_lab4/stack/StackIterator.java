@@ -16,8 +16,8 @@ public class StackIterator implements Iterator<Object>
 	private final int max;
 
 	/**
-	* Constructor for StackMain.
-	* Setting default length value of stack.
+	* Constructor for StackIterator.
+	* 
 	* @param items Takes an Object array as parameter.
 	* @param size Takes int size as parameter.
 	*/
