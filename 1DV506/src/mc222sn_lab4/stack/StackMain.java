@@ -79,7 +79,6 @@ public class StackMain implements Stack
 		{
 			throw new IllegalStateException("The stack is empty!");
 		}
-		
 	}
 	
 	@Override

@@ -8,9 +8,9 @@ public class StackTest
 	{
 		StackMain stack = new StackMain();
 		
-		System.out.printf("Peek: %d\n", stack.peek());
+		// System.out.printf("Peek: %d\n", stack.peek());
 		
-		System.out.printf("Pop: %d\n", stack.pop());
+		// System.out.printf("Pop: %d\n", stack.pop());
 		
 		System.out.printf("Stack size: %d\n", stack.size());
 		// System.out.printf("Stack empty: %b\n", stack.isEmpty());
