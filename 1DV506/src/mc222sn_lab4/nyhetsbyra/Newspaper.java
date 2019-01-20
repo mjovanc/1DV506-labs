@@ -39,7 +39,7 @@ public class Newspaper
 	 * 
 	 * @param n News object.
 	 */
-	public void addNews(News n)
+	public void addNews(News n) throws IllegalArgumentException
 	{
 		news.add(n);
 	}

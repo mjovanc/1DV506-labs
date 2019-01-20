@@ -28,6 +28,7 @@ public class NewsAgency
 	/**
 	 * Register the newspaper object.
 	 * 
+	 * @throws IllegalArgumentException
 	 * @param np Newspaper object.
 	 */
 	public void registerNewspaper(Newspaper np)
@@ -54,7 +55,7 @@ public class NewsAgency
 	/**
 	 * Get the name for the NewsAgency object.
 	 * 
-	 * @return String Get the NewsAgency name.
+	 * @return String Get the NewsAgency na throws IllegalArgumentExceptionme.
 	 */
 	public String getName()
 	{
@@ -64,10 +65,8 @@ public class NewsAgency
 	/**
 	 * Sending news to all registered newspapers with
 	 * exception of the source of the news.
-	 * 
-	 * 
 	 */
-	public void sendNews()
+	public void sendNews() throws IllegalStateException
 	{
 		for (Newspaper np : registeredNewspapers)
 		{
