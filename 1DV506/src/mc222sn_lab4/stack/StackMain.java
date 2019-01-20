@@ -62,7 +62,7 @@ public class StackMain implements Stack
 		{
 			resize();
 		}
-		
+
 		values[size++] = element;
 	}
 
@@ -74,7 +74,7 @@ public class StackMain implements Stack
 	@Override
 	public Object pop()
 	{
-		try
+		if (size != 0)
 		{
 			Object value = values[size - 1];
 			size--;
@@ -90,12 +90,10 @@ public class StackMain implements Stack
 
 			return value;
 		}
-		catch (IndexOutOfBoundsException e)
+		else
 		{
-			System.err.println("Can't pop empty array!");
+			throw new IllegalStateException("Can't pop an empty stack!");
 		}
-		
-		return null;
 	}
 
 	/**
@@ -126,7 +124,14 @@ public class StackMain implements Stack
 	@Override
 	public Iterator<Object> iterator()
 	{
-		 return new StackIterator(values, size);
+		if (size != 0)
+		{
+			return new StackIterator(values, size);
+		}
+		else
+		{
+			throw new IllegalStateException("Can't iterate through empty stack!");
+		}
 	}
 	
 	/**

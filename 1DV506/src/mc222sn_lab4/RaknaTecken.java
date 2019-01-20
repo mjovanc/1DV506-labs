@@ -21,12 +21,19 @@ public class RaknaTecken
 	 */
 	public static void main(String[] args) throws FileNotFoundException
 	{
-		String path = args[0];
-		File inputNumbers = new File(path);
-		System.out.printf("Antal stora bokstäver: %d\n", RaknaTecken.cLettersCount(inputNumbers));
-		System.out.printf("Antal små bokstäver: %d\n", RaknaTecken.lcLettersCount(inputNumbers));
-		System.out.printf("Antal \"whitespaces\": %d\n", RaknaTecken.wsCount(inputNumbers));
-		System.out.printf("Övriga tecken: %d", RaknaTecken.otherChars(inputNumbers));
+		try
+		{
+			String path = args[0];
+			File inputNumbers = new File(path);
+			System.out.printf("Antal stora bokstäver: %d\n", RaknaTecken.cLettersCount(inputNumbers));
+			System.out.printf("Antal små bokstäver: %d\n", RaknaTecken.lcLettersCount(inputNumbers));
+			System.out.printf("Antal \"whitespaces\": %d\n", RaknaTecken.wsCount(inputNumbers));
+			System.out.printf("Övriga tecken: %d", RaknaTecken.otherChars(inputNumbers));
+		}
+		catch (FileNotFoundException e)
+		{
+			System.err.println("No such file or directory!");
+		}
 	}
 	
 	/**
@@ -38,26 +45,26 @@ public class RaknaTecken
 	 */
 	private static int cLettersCount(File inputFile) throws FileNotFoundException
 	{
-		Scanner in = new Scanner(inputFile);
-		
 		int count = 0;
 		
-		while(in.hasNextLine())
+		Scanner in = new Scanner(inputFile);
+			
+		while (in.hasNextLine())
 		{
 			String line = in.nextLine();
-			
+				
 			for (int i = 0; i < line.length(); i++)
 			{
 				char letter = line.charAt(i);
 				boolean upperCase = Character.isUpperCase(letter);
-				
+					
 				if (upperCase)
 				{
 					count++;
 				}
 			}
 		}
-		
+			
 		in.close();
 		
 		return count;
@@ -72,11 +79,11 @@ public class RaknaTecken
 	 */
 	private static int lcLettersCount(File inputFile) throws FileNotFoundException
 	{
-		Scanner in = new Scanner(inputFile);
-		
 		int count = 0;
 		
-		while(in.hasNextLine())
+		Scanner in = new Scanner(inputFile);
+			
+		while (in.hasNextLine())
 		{
 			String line = in.nextLine();
 			
@@ -91,7 +98,7 @@ public class RaknaTecken
 				}
 			}
 		}
-		
+			
 		in.close();
 		
 		return count;
@@ -106,26 +113,26 @@ public class RaknaTecken
 	 */
 	private static int wsCount(File inputFile) throws FileNotFoundException
 	{
-		Scanner in = new Scanner(inputFile);
-		
 		int count = 0;
 		
-		while(in.hasNextLine())
+		Scanner in = new Scanner(inputFile);
+			
+		while (in.hasNextLine())
 		{
 			String line = in.nextLine();
-			
+				
 			for (int i = 0; i < line.length(); i++)
 			{
 				char letter = line.charAt(i);
 				boolean whiteSpace = Character.isWhitespace(letter);
-				
+					
 				if (whiteSpace)
 				{
 					count++;
 				}
 			}
 		}
-		
+			
 		in.close();
 		
 		return count;
@@ -140,14 +147,14 @@ public class RaknaTecken
 	 */
 	private static int otherChars(File inputFile) throws FileNotFoundException
 	{
-		Scanner in = new Scanner(inputFile);
-		
 		int count = 0;
 		
-		while(in.hasNextLine())
+		Scanner in = new Scanner(inputFile);
+			
+		while (in.hasNextLine())
 		{
 			String line = in.nextLine();
-			
+		
 			for (int i = 0; i < line.length(); i++)
 			{
 				char letter = line.charAt(i);
@@ -161,7 +168,7 @@ public class RaknaTecken
 				}
 			}
 		}
-		
+			
 		in.close();
 		
 		return count;

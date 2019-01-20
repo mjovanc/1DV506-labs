@@ -21,25 +21,32 @@ public class Histogram
 	 */
 	public static void main(String[] args) throws FileNotFoundException
 	{
-		String path = args[0];
-		File inputNumbers = new File(path);
-		
-		System.out.printf("Läser heltal från filen: %s\n", path);
-		System.out.printf("Antal i intervallet [1,100]: %d\n", Histogram.countInInterval(inputNumbers));
-		System.out.printf("Övriga: %d\n", Histogram.countOutInterval(inputNumbers));
-		
-		System.out.println("Histogram");
-		for (int i = 1; i < 100; i = i + 10)
+		try
 		{
-			int occurs = Histogram.occurs(inputNumbers, i, i + 9);
-			StringBuilder asterix = new StringBuilder();
+			String path = args[0];
+			File inputNumbers = new File(path);
 			
-			for (int j = 0; j < occurs; j++)
+			System.out.printf("Läser heltal från filen: %s\n", path);
+			System.out.printf("Antal i intervallet [1,100]: %d\n", Histogram.countInInterval(inputNumbers));
+			System.out.printf("Övriga: %d\n", Histogram.countOutInterval(inputNumbers));
+			
+			System.out.println("Histogram");
+			for (int i = 1; i < 100; i = i + 10)
 			{
-				asterix.append("*");
+				int occurs = Histogram.occurs(inputNumbers, i, i + 9);
+				StringBuilder asterix = new StringBuilder();
+				
+				for (int j = 0; j < occurs; j++)
+				{
+					asterix.append("*");
+				}
+				
+				System.out.printf("  %-2d - %-3d | %s \n", i, i + 9, asterix);
 			}
-			
-			System.out.printf("  %-2d - %-3d | %s \n", i, i + 9, asterix);
+		}
+		catch (FileNotFoundException e)
+		{
+			System.err.println("No such file or directory!");
 		}
 	}
 	
@@ -54,19 +61,26 @@ public class Histogram
 	{
 		int count = 0;
 		
-		Scanner in = new Scanner(numbers);
-
-		while(in.hasNextInt())
+		try
 		{
-			int value = in.nextInt();
-				
-			if (value > 0 && value <= 100)
+			Scanner in = new Scanner(numbers);
+
+			while(in.hasNextInt())
 			{
-				count++;
+				int value = in.nextInt();
+					
+				if (value > 0 && value <= 100)
+				{
+					count++;
+				}
 			}
+				
+			in.close();
 		}
-			
-		in.close();
+		catch (FileNotFoundException e)
+		{
+			System.err.println("No such file or directory!");
+		}
 		
 		return count;
 	}
@@ -83,20 +97,27 @@ public class Histogram
 	{
 		int count = 0;
 		
-		Scanner in = new Scanner(numbers);
-
-		while(in.hasNextInt())
+		try
 		{
-			int value = in.nextInt();
-			
-			if (value < 1 || value > 100)
+			Scanner in = new Scanner(numbers);
+
+			while(in.hasNextInt())
 			{
-				count++;
+				int value = in.nextInt();
+				
+				if (value < 1 || value > 100)
+				{
+					count++;
+				}
+				
 			}
 			
+			in.close();
 		}
-		
-		in.close();
+		catch (FileNotFoundException e)
+		{
+			System.err.println("No such file or directory!");
+		}
 		
 		return count;
 	}
@@ -114,19 +135,26 @@ public class Histogram
 	{
 		int count = 0;
 		
-		Scanner in = new Scanner(numbers);
-
-		while(in.hasNextInt())
+		try
 		{
-			int value = in.nextInt();
-			
-			if (value >= numberFrom && value <= numberTo)
+			Scanner in = new Scanner(numbers);
+
+			while(in.hasNextInt())
 			{
-				count++;
+				int value = in.nextInt();
+				
+				if (value >= numberFrom && value <= numberTo)
+				{
+					count++;
+				}
 			}
+				
+			in.close();
 		}
-			
-		in.close();
+		catch (FileNotFoundException e)
+		{
+			System.err.println("No such file or directory!");
+		}
 		
 		return count;
 	}

@@ -19,6 +19,7 @@ public class SorteraOrter
 	 * to see if the methods work as they should.
 	 *
 	 * @param args Takes an array of strings as parameter.
+	 * @throws FileNotFoundException
 	 */
 	public static void main(String[] args) throws FileNotFoundException
 	{
