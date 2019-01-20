@@ -4,8 +4,21 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+/**
+ * The RaknaTecken class.
+ *
+ * @version 1.0
+ * @author Marcus Cvjeticanin
+ */
 public class RaknaTecken
 {
+	/**
+	 * The starting point of the program. Runs some tests
+	 * to see if the methods work as they should.
+	 *
+	 * @param args Takes an array of strings as parameter.
+	 * @throws FileNotFoundException
+	 */
 	public static void main(String[] args) throws FileNotFoundException
 	{
 		String path = args[0];
@@ -16,6 +29,13 @@ public class RaknaTecken
 		System.out.printf("Övriga tecken: %d", RaknaTecken.otherChars(inputNumbers));
 	}
 	
+	/**
+	 * Gets the capital letters count.
+	 * 
+	 * @param inputFile Takes a File object as parameter.
+	 * @throws FileNotFoundException
+	 * @return int Returns the count.
+	 */
 	private static int cLettersCount(File inputFile) throws FileNotFoundException
 	{
 		Scanner in = new Scanner(inputFile);
@@ -43,6 +63,13 @@ public class RaknaTecken
 		return count;
 	}
 	
+	/**
+	 * Gets the lowercase letters count.
+	 * 
+	 * @param inputFile Takes a File object as parameter.
+	 * @throws FileNotFoundException
+	 * @return int Returns the count.
+	 */
 	private static int lcLettersCount(File inputFile) throws FileNotFoundException
 	{
 		Scanner in = new Scanner(inputFile);
@@ -70,6 +97,13 @@ public class RaknaTecken
 		return count;
 	}
 	
+	/**
+	 * Gets the whitespace letters count.
+	 * 
+	 * @param inputFile Takes a File object as parameter.
+	 * @throws FileNotFoundException
+	 * @return int Returns the count.
+	 */
 	private static int wsCount(File inputFile) throws FileNotFoundException
 	{
 		Scanner in = new Scanner(inputFile);
@@ -97,6 +131,13 @@ public class RaknaTecken
 		return count;
 	}
 	
+	/**
+	 * Gets the other letters count.
+	 * 
+	 * @param inputFile Takes a File object as parameter.
+	 * @throws FileNotFoundException
+	 * @return int Returns the count.
+	 */
 	private static int otherChars(File inputFile) throws FileNotFoundException
 	{
 		Scanner in = new Scanner(inputFile);
