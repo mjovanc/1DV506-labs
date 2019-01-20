@@ -61,11 +61,30 @@ public class NewsMain
 
 			reuters.sendNews();
 			
-			for (News n : reuters.getAllNews())
+			for (Newspaper np : reuters.getRegisterdNewspapers())
 			{
-				System.out.println(n.displayNews());
-				
+				System.out.println("\n" + np.getName());
+				for (News n : np.getAllNews())
+				{
+					boolean aftonbladet = n.getNews().getNewspaper().getName().equals("Aftonbladet");
+					boolean expressen = n.getNews().getNewspaper().getName().equals("Expressen");
+					boolean smalandsposten = n.getNews().getNewspaper().getName().equals("Smålandsposten");
+					
+					if (aftonbladet)
+					{
+						System.out.println(n.getNews().displayNews());
+					}
+					else if (expressen)
+					{
+						System.out.println(n.getNews().displayNews());
+					}
+					else if (smalandsposten)
+					{
+						System.out.println(n.getNews().displayNews());
+					}
+				}
 			}
+			
 		}
 		catch (FileNotFoundException e)
 		{

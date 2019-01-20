@@ -53,6 +53,16 @@ public class NewsAgency
 	}
 	
 	/**
+	 * Get all registered Newspapers from NewsAgency object.
+	 * 
+	 * @return ArrayList<Newspaper>
+	 */
+	public ArrayList<Newspaper> getRegisterdNewspapers()
+	{
+		return registeredNewspapers;
+	}
+	
+	/**
 	 * Get the name for the NewsAgency object.
 	 * 
 	 * @return String Get the NewsAgency na throws IllegalArgumentExceptionme.
